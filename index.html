@@ -10,41 +10,117 @@
     <link rel='stylesheet' text='text/css' href='assets/css/reset.css'>
     <link rel='stylesheet' text='text/css' href='assets/css/style.css'>
 
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- We need to copy the bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     
 </head>
 <body>
-    <h1>Crystals Collector</h1>
-    <p>I will choose a number</p>
-    <p>Then, your job is to match my number by clicking on the crystals as many times as needed</p>
-    <p>Note that I will keep the value of each crystal hidden until you click on them.</p>
-    <p>Do the math as you click on the crystals</p>
-    <p>If you go over my number, you lose.</p>
-    <p>Good luck!</p>
-
-    <!-- Display a random number between 19 & 120 -->
-    <p>Random Number:</p>
-    <div id='randomNumber'></div>
-
-    <p>Wins: <strong class='wins'>0</strong>
-    <p>Losses: <strong class='losses'>0</strong>
-
-   <!-- 4 crystals displayed as buttons with hidden value between 1 & 12 -->
-    <button class = 'firstCrystal'>crystal 1</button>
-    <button class = 'secondCrystal'>crystal 2</button>
-    <button class = 'thirdCrystal'>crystal 3</button>
-    <button class = 'fourthCrystal'>crystal 4</button>
+<div class='container'>
+    <div class="row justify-content-md-center">
+        <div class='row'>
+            <div class='col-md-12' style='background: yellow'>
+                <h1>Crystals Collector</h1>
+            </div>
+        </div>
+    </div>
+</div>
 
 
+<!--test: large modal-->
+<!-- Large modal -->
+<div class='container'>
+<div class="row justify-content-md-center">
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Instructions</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class='container'>
+            <!--jumbotron inside a large modal-->
+            <div class="jumbotron">
+                <h1 class="display-4">Instructions:</h1>
+                <p class="lead">I will choose a number and display it for you.</p>
+                <p class="lead">Then, your job is to match my number by clicking on the crystals as many times as needed.</p>
+                <p class="lead">Note that I will keep the value of each crystal hidden until you click on them. This is where your memory skills will shine.</p>
+                <p class="lead">Do the math as you click on the crystals.</p>
+                <p class="lead">If your total score is the same as my number, you win!</p>
+                <p class="lead">Good luck!</p>
+                <hr class="my-4">
+                <p>Watch Demo Video</p>
+                <a class="btn btn-primary btn-lg" href="https://www.youtube.com/watch?v=yNI0l2FMeCk&feature=youtu.be"target="_blank" role="button">Demo</a>
+            </div>
+        </div>           
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+<br>
 
 
-    <p>Your total score is:</p>
-    <div id='totalScore'></div>
+<div class='container'>
+    <div class="row justify-content-center">
+        <div class='col-4 text-center' id='scoreDiv' >
+        <!--<div class="d-flex justify-content-center">-->
+            <!-- Display a random number between 19 & 120 -->
+            <p>Random Number: </p><br>
+            <div id='randomNumber'></div>
+        </div>
+    </div>
+</div>
+<br>
+<div class='container'>
+    <div class="row justify-content-center">
+        <div class='col-4 text-center' id='scoreDiv2' >
+            <!-- Display a random number between 19 & 120 -->
+            <p>Your total score is:</p>
+            <div id='totalScore'></div>
+        </div>
+    </div>
+</div>
+<br>
 
 
+<!-- add div container to center our crystals -->
+<div class='container'></div>
+    <div class='crystalsDiv'>
+    <!------------empty div to insert crystals---------------->
+    </div>
+</div>
+<br>
+
+<div class='container'>
+<div class="row justify-content-md-center">
+        <div class="col-sm-9 text-center" id='scoreTitle'>
+          Score
+          <div class="row">
+            <div class="col-8 col-sm-6 text-center" id='scoreWins'>
+                <p>Wins: <strong class='wins'>0</strong>
+            </div>
+            <div class="col-4 col-sm-6 text-center" id='scoreLosses'>
+                <p>Losses: <strong class='losses'>0</strong>
+            </div>
+          </div>
+        </div>
+</div>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!-- CDN Link to jQuery website: this method saves the jQuery file in the browser's memory -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- Link to js file -->
     <script src='assets/javascript/game.js'></script>
+
 </body>
 </html>

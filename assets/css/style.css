@@ -1,3 +1,52 @@
-h1 {
-    color: red;
+img {
+    height: 100%;
+    width: 100%;
+
 }
+
+#scoreDiv {
+    background: pink;
+}
+
+#scoreDiv2 {
+    background: lightblue;
+}
+
+.container-2 {
+    background: lightblue;
+}
+
+#scoreTitle {
+    background: teal;
+}
+
+#scoreWins {
+    background: pink;
+}
+
+#scoreLosses {
+    background: lightblue;
+}
+
+body {
+    background-image: url(../images/crystal3.gif);
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background-position:center;
+    height: 100%;
+}
+    
+.crystalsDiv {
+    justify-content: center;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+}
+
+.crystalImg {
+    height: 180px;
+    width: 180px;
+}
+
+
+
