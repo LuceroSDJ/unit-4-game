@@ -10,6 +10,10 @@ This app HTML is dynamically updated with the popular jQuery library
 * Do the math as you click on the crystals.
 * If your total score is the same as my number, you win!
 
+[Demo Video](https://www.youtube.com/watch?v=yNI0l2FMeCk&feature=youtu.be)
+
+![crystal1](https://user-images.githubusercontent.com/44692872/51081052-4f2c4c80-16ac-11e9-92ca-f21200cfab24.gif)![crystal10](https://user-images.githubusercontent.com/44692872/51081050-4471b780-16ac-11e9-82dd-b4f2edf07bce.gif)![crystal1](https://user-images.githubusercontent.com/44692872/51081052-4f2c4c80-16ac-11e9-92ca-f21200cfab24.gif)![crystal10](https://user-images.githubusercontent.com/44692872/51081050-4471b780-16ac-11e9-82dd-b4f2edf07bce.gif)![crystal1](https://user-images.githubusercontent.com/44692872/51081052-4f2c4c80-16ac-11e9-92ca-f21200cfab24.gif)![crystal10](https://user-images.githubusercontent.com/44692872/51081050-4471b780-16ac-11e9-82dd-b4f2edf07bce.gif)
+
 ## Good Luck!
 
 
