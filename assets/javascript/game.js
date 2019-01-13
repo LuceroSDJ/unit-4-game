@@ -67,10 +67,7 @@ function conditions() {
         //print new random number on the page
         $('#randomNumber').text(random);
         //generate a different hidden number per crystal for the next game
-        crystalOne = Math.floor(Math.random() * 11 + 1);
-        crystalTwo = Math.floor(Math.random() * 11 + 1);
-        crystalThree = Math.floor(Math.random() * 11 + 1);
-        crystalFour = Math.floor(Math.random() * 11 + 1);
+        createHiddenValues();
         //reset sumTotal
         sumTotal = 0;
         //test
@@ -92,10 +89,7 @@ function conditions() {
         //print new random number on the page
         $('#randomNumber').text(random);
         //generate a different hidden number per crystal for the next game
-        crystalOne = Math.floor(Math.random() * 11 + 1);
-        crystalTwo = Math.floor(Math.random() * 11 + 1);
-        crystalThree = Math.floor(Math.random() * 11 + 1);
-        crystalFour = Math.floor(Math.random() * 11 + 1);
+        createHiddenValues();
         //reset sumTotal
         sumTotal = 0;
         //print sumTotal=0 in the page
@@ -103,40 +97,4 @@ function conditions() {
         alert('Good luck next time!!!!!!!');
         }));
     }
-
-
-
-
-
-
-/*
-$('.crystalsDiv').on('click', function() {
-    //console.log the hidden value of the clicked crystal
-    var value = ($(this).attr('value'));
-    console.log($(this).attr('value'));
-    //console.log($(this.value));
-
-    //convert string into integer
-    //sumTotal = parseInt(sumTotal);
-    /*add hidden value to var sumTotal
-    shorthand operator of sumTotal = sumTotal + crystalOne;*/
-    //sumTotal += hiddenValues[i];
-    //console.log('your total so far: ' + sumTotal);
-    
-    //console.log('this: ' + $(this));
-    
-    
-
-    /*add hidden value to var sumTotal
-    shorthand operator of sumTotal = sumTotal + crystalOne;*/
-    ////////////sumTotal += value;
-    //////////console.log('your total so far: ' + sumTotal);
-    //convert string into integer
-    //sumTotal = parseInt(sumTotal);
-    //print 'score so far' in the html empty tag and add call back function
-    //////////$('#totalScore').text(sumTotal, $(function(){
-    //recall 'retur function conditions'
-    //conditions();
-    //$('.firstCrystal').slideToggle(200); //wow! se desaparece*/
-    
-//});
+}
