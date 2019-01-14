@@ -1,33 +1,40 @@
-//Initialize variables with values of zero
+$(document).ready(function() {
+
+
+//Initialize global variables with values of zero
 var wins = 0;
 var losses = 0;
 var sumTotal = 0;
-//var sumTotal = [];
 var random = 0;
-var hiddenValues = [''];
+var hiddenValues = [];
 
-//array: crystal images 
+//create array to store crystal images
 var images = ['assets/images/crystal1.gif','assets/images/crystal5.gif','assets/images/crystal10.gif', 'assets/images/crystal20.gif'];
 
-//for loop(Initialize crystal variables with a random number between 1 and 12)
+//Initialize crystal variables with a random number between 1 and 12
 function createHiddenValues() {
     for(i=0; i < 4; i++) {
-        //push hiden value inside hidenValues array
+        //push hiden value at the end of the array inside hidenValues array
         hiddenValues.push(Math.floor(Math.random() * 11 + 1));
         console.log('crystal hidden values: ' + hiddenValues);
     }
 }
 
-//Generate crystals
+//Generate crystals with hidden values on the fly and add them to the DOM
 function generateCrystals() {
     createHiddenValues();
     //add crystal images to empty div
     for(var i=0; i<hiddenValues.length; i++) {
         var crystal = $('<img>');
         crystal.addClass('crystalImg');
-        crystal.attr('value', hiddenValues[i]);
-        crystal.attr('src', images[i]);
+        //prop help to store values 
+        crystal.prop('value', hiddenValues[i]);
+        crystal.prop('src', images[i]);
+        //append crystals to empty div
         $('.crystalsDiv').append(crystal);
+        crystal.click(function() {
+            onImageClick($(this));
+       });
     }
 }
 
@@ -41,60 +48,38 @@ $(window).on('load', function() {
    
 });
 
-//When user clicks on crystal 1, a random hidden values must be added to the next & previous hidden values
-$('.crystalsDiv').on('click', function() {
-    console.log(hiddenValues[i]);
-    /*add hidden value to var sumTotal
-    shorthand operator of sumTotal = sumTotal + crystalOne;*/
-    sumTotal += hiddenValues[i];
-    console.log('your total so far: ' + sumTotal);
-    //print 'score so far' in the html empty tag 
-    $('#totalScore').text(sumTotal);
-    //conditions();
-});
+//reset function
+//use this function later
+function reset() {
+    generateCrystals();
+random = Math.floor(Math.random() * 101) + 19; 
+$('#randomNumber').text(random);
+console.log(random);
+hiddenValues = [];
+sumTotal = 0; 
+$('#totalScore').text(sumTotal); 
+}
 
-//Define conditions. When user wins or loses, increment points by 1 accordingly
-function conditions() {
+function onImageClick(image){
+    var value = image.val(); //value of clicked image
+    console.log(value);
+    //add value to previous sumTotal
+    sumTotal = sumTotal + value;
+    $('#totalScore').text(sumTotal);
+    //conditions
     if(random === sumTotal) {
-        //increment wins
         wins++;
-        //print wins(+1 point) on the page & by adding comma function ()... this function will waint until our previous lines of code are executed
-        $('.wins').text(wins, (function() {
-        //Now, generate a different random number between 19 and 120
-        random = Math.floor(Math.random() * 101) + 19;
-        //test
-        console.log('Random Number: ' + random);
-        //print new random number on the page
-        $('#randomNumber').text(random);
-        //generate a different hidden number per crystal for the next game
-        createHiddenValues();
-        //reset sumTotal
-        sumTotal = 0;
-        //test
-        console.log('reset' + sumTotal);
-        //print sumTotal=0 in the page
-        $('#totalScore').text(sumTotal);
-        alert('you win');
-        }));
-       
+        $('.wins').text(wins);
+        alert('You win!');
+        reset();
     }else if(random < sumTotal) {
-        //increment losses
+        reset();
         losses++;
-        //print incremented losses on the page
-        $('.losses').text(losses, $(function() {
-        //generate a different random number between 19 and 120
-        random = Math.floor(Math.random() * 101) + 19;
-        //test
-        console.log('Random Number: ' + random);
-        //print new random number on the page
-        $('#randomNumber').text(random);
-        //generate a different hidden number per crystal for the next game
-        createHiddenValues();
-        //reset sumTotal
-        sumTotal = 0;
-        //print sumTotal=0 in the page
-        $('#totalScore').text(sumTotal);
-        alert('Good luck next time!!!!!!!');
-        }));
+        $('.losses').text(losses, (function(){
+        alert('Good luck next time!');
+        })); 
     }
 }
+ 
+//closes $(document).ready(function()
+});
