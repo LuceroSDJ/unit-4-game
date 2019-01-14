@@ -1,23 +1,43 @@
+.title {
+    color: teal;
+    font-size: 50px;
+
+}
+
 img {
     height: 100%;
     width: 100%;
+}
 
+button {
+    opacity: 0.6;
+}
+
+strong {
+    font-size: 30px;
 }
 
 #scoreDiv {
     background: pink;
+    border-radius: 15px;
+    opacity: 0.6;
 }
 
 #scoreDiv2 {
     background: lightblue;
+    border-radius: 15px;
+    opacity: 0.7;
 }
 
 .container-2 {
     background: lightblue;
+    border-radius: 15px;
 }
 
 #scoreTitle {
     background: teal;
+    opacity: 0.6;
+    border-radius: 10px;
 }
 
 #scoreWins {
@@ -29,10 +49,10 @@ img {
 }
 
 body {
-    background-image: url(../images/crystal3.gif);
-    background-size: 100% 100%;
-    background-repeat:no-repeat;
-    background-position:center;
+    background-image: url(../images/stars.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100%;
 }
     
@@ -46,7 +66,17 @@ body {
 .crystalImg {
     height: 180px;
     width: 180px;
+    opacity: 0.7;
+    border-radius: 20px;
 }
 
+.container {
+    font-family: 'Lilita One', cursive;
+    font-size: 25px;    
+}
 
-
+.modal-content {
+    opacity:0.8 !important;
+}
+/* Note: opacity property can take a value from 0.0 - 1.0. Memorize: the lower value, the more transparent the container or image.
+/* Note: !important overwrites the default property value found in bootstrap

@@ -27,11 +27,16 @@ function generateCrystals() {
     for(var i=0; i<hiddenValues.length; i++) {
         var crystal = $('<img>');
         crystal.addClass('crystalImg');
-        //prop help to store values 
+        //note: prop helps to store values 
         crystal.prop('value', hiddenValues[i]);
         crystal.prop('src', images[i]);
         //append crystals to empty div
         $('.crystalsDiv').append(crystal);
+        /*since my crystal images are created on the fly, I decided to target the <img> 
+        by calling my 'var crystal' on line 28 and create my EVENT CLICK FUNCTION.
+        When I start playing the game everything seems to be working fine, however, when I either win or lose,
+        the game re-starts and MY CRYSTALS ARE GENERATED AGAIN.
+        As a result, I end up with more than 4 crystals in my second game */
         crystal.click(function() {
             onImageClick($(this));
        });
@@ -51,13 +56,15 @@ $(window).on('load', function() {
 //reset function
 //use this function later
 function reset() {
+    //generate new randomly selected hidden values
     generateCrystals();
-random = Math.floor(Math.random() * 101) + 19; 
-$('#randomNumber').text(random);
-console.log(random);
-hiddenValues = [];
-sumTotal = 0; 
-$('#totalScore').text(sumTotal); 
+    //Different random number
+    random = Math.floor(Math.random() * 101) + 19; 
+    $('#randomNumber').text(random);
+    console.log(random);
+    hiddenValues = [];
+    sumTotal = 0; 
+    $('#totalScore').text(sumTotal); 
 }
 
 function onImageClick(image){
@@ -66,7 +73,7 @@ function onImageClick(image){
     //add value to previous sumTotal
     sumTotal = sumTotal + value;
     $('#totalScore').text(sumTotal);
-    //conditions
+    //conditions if else statement
     if(random === sumTotal) {
         wins++;
         $('.wins').text(wins);

@@ -16,51 +16,51 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <!-- Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
     
 </head>
 <body>
+
 <div class='container'>
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-center">
         <div class='row'>
-            <div class='col-md-12' style='background: yellow'>
-                <h1>Crystals Collector</h1>
+            <div class='col-md-12' style='background: purple'>
+                <h1 class='title'>Crystals Collector</h1>
             </div>
         </div>
     </div>
 </div>
+<br>
 
 
 <!--test: large modal-->
 <!-- Large modal -->
 <div class='container'>
-<div class="row justify-content-md-center">
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Instructions</button>
-
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-        <div class='container'>
-            <!--jumbotron inside a large modal-->
-            <div class="jumbotron">
-                <h1 class="display-4">Instructions:</h1>
-                <p class="lead">I will choose a number and display it for you.</p>
-                <p class="lead">Then, your job is to match my number by clicking on the crystals as many times as needed.</p>
-                <p class="lead">Note that I will keep the value of each crystal hidden until you click on them. This is where your memory skills will shine.</p>
-                <p class="lead">Do the math as you click on the crystals.</p>
-                <p class="lead">If your total score is the same as my number, you win!</p>
-                <p class="lead">Good luck!</p>
-                <hr class="my-4">
-                <p>Watch Demo Video</p>
-                <a class="btn btn-primary btn-lg" href="https://www.youtube.com/watch?v=yNI0l2FMeCk&feature=youtu.be"target="_blank" role="button">Demo</a>
+    <div class="row justify-content-center">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><strong>Instructions</strong></button>
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class='container'>
+                        <!--jumbotron inside a large modal-->
+                        <div class="jumbotron">
+                            <h1 class="display-4">Instructions:</h1>
+                            <p class="lead">I will choose a number and display it for you.</p>
+                            <p class="lead">Then, your job is to match my number by clicking on the crystals as many times as needed.</p>
+                            <p class="lead">Note that I will keep the value of each crystal hidden until you click on them. This is where your memory skills will shine.</p>
+                            <p class="lead">Do the math as you click on the crystals.</p>
+                            <p class="lead">If your total score is the same as my number, you win!</p>
+                            <p class="lead">Good luck!</p>
+                            <hr class="my-4">
+                            <p>Watch Demo Video</p>
+                            <a class="btn btn-primary btn-lg" href="https://www.youtube.com/watch?v=yNI0l2FMeCk&feature=youtu.be"target="_blank" role="button">Demo</a>
+                        </div>
+                    </div>           
+                </div>
             </div>
-        </div>           
+        </div>
     </div>
-  </div>
-</div>
-
-</div>
 </div>
 <br>
 
@@ -97,19 +97,19 @@
 <br>
 
 <div class='container'>
-<div class="row justify-content-md-center">
-        <div class="col-sm-9 text-center" id='scoreTitle'>
-          Score
-          <div class="row">
-            <div class="col-8 col-sm-6 text-center" id='scoreWins'>
-                <p>Wins: <strong class='wins'>0</strong>
+    <div class="row justify-content-md-center">
+            <div class="col-sm-9 text-center" id='scoreTitle'>
+            Score
+            <div class="row">
+                <div class="col-8 col-sm-6 text-center" id='scoreWins'>
+                    <p>Wins: <strong class='wins'>0</strong>
+                </div>
+                <div class="col-4 col-sm-6 text-center" id='scoreLosses'>
+                    <p>Losses: <strong class='losses'>0</strong>
+                </div>
             </div>
-            <div class="col-4 col-sm-6 text-center" id='scoreLosses'>
-                <p>Losses: <strong class='losses'>0</strong>
             </div>
-          </div>
-        </div>
-</div>
+    </div>
 </div>
 
 
