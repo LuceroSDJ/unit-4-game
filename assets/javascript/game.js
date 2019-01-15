@@ -7,6 +7,7 @@ var losses = 0;
 var sumTotal = 0;
 var random = 0;
 var hiddenValues = [];
+var delayedAlert;
 
 //create array to store crystal images
 var images = ['assets/images/crystal1.gif','assets/images/crystal5.gif','assets/images/crystal10.gif', 'assets/images/crystal20.gif'];
@@ -58,7 +59,7 @@ $(window).on('load', function() {
 function reset() {
     //clear
     hiddenValues = [];
-    $('.crystalsDiv').empty();
+    $('.crystalsDiv').empty(); //this step will empty our div
     //generate new randomly selected hidden values
     generateCrystals();
     //Different random number
@@ -79,24 +80,41 @@ function onImageClick(image){
     if(random === sumTotal) {
         wins++;
         $('.wins').text(wins);
-        result('wins');
-        reset();
+        //result('wins');
+        /* Delay alert message for a very small period of time. 
+        In this case, I am delaying it by 0.05 seconds because if I keep this gap of time too long, 
+        and keep clicking on a crystal even after I lose or win, it will still register these clicks. 
+        As a result, I end up getting several alert boxes if I delay too long to execute my timeout function. 
+        Reference to in-class activity 06.Timeout. 
+        This fucntion prevents my alert box and reset function from being executed right away allowing the user to 
+        literally see 'random number' and 'total score number' matching if user wins.
+        On the other hand, if the user loses, then she/he can also literally see that 'total score number' is greater than the random number. */
+        delayedAlert = setTimeout(function() {
+            alert("You win!");
+            reset();
+            }, 50);
+           
+        
     }else if(random < sumTotal) {
         losses++;
         $('.losses').text(losses);
-        result('losses');
-        reset();
-
+        //result('losses');
+        delayedAlert = setTimeout(function() {
+            alert("Good Luck Next Time!");
+            reset();
+            }, 50);
     }
 }
 
-function result(R) {
+//This approach still makes my alert pop up right away
+/*function result(R) {
     if(R === 'wins') {
         alert('you win');
     }else{
         alert('good luck next time!');
-    }
-}
+    } */
+//}); 
+
  
 //closes $(document).ready(function()
 });
