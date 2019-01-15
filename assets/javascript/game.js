@@ -56,13 +56,15 @@ $(window).on('load', function() {
 //reset function
 //use this function later
 function reset() {
+    //clear
+    hiddenValues = [];
+    $('.crystalsDiv').empty();
     //generate new randomly selected hidden values
     generateCrystals();
     //Different random number
     random = Math.floor(Math.random() * 101) + 19; 
     $('#randomNumber').text(random);
     console.log(random);
-    hiddenValues = [];
     sumTotal = 0; 
     $('#totalScore').text(sumTotal); 
 }
@@ -77,14 +79,22 @@ function onImageClick(image){
     if(random === sumTotal) {
         wins++;
         $('.wins').text(wins);
-        alert('You win!');
+        result('wins');
         reset();
     }else if(random < sumTotal) {
-        reset();
         losses++;
-        $('.losses').text(losses, (function(){
-        alert('Good luck next time!');
-        })); 
+        $('.losses').text(losses);
+        result('losses');
+        reset();
+
+    }
+}
+
+function result(R) {
+    if(R === 'wins') {
+        alert('you win');
+    }else{
+        alert('good luck next time!');
     }
 }
  
