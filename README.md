@@ -20,7 +20,7 @@ The goal is to match the random number by clicking on the crystals based on thei
 
 [Demo Video](https://www.youtube.com/watch?v=yNI0l2FMeCk&feature=youtu.be)
 
-![crystal1](https://user-images.githubusercontent.com/44692872/51081052-4f2c4c80-16ac-11e9-92ca-f21200cfab24.gif)![crystal10](https://user-images.githubusercontent.com/44692872/51081050-4471b780-16ac-11e9-82dd-b4f2edf07bce.gif)![crystal1](https://user-images.githubusercontent.com/44692872/51081052-4f2c4c80-16ac-11e9-92ca-f21200cfab24.gif)![crystal10](https://user-images.githubusercontent.com/44692872/51081050-4471b780-16ac-11e9-82dd-b4f2edf07bce.gif)![crystal1](https://user-images.githubusercontent.com/44692872/51081052-4f2c4c80-16ac-11e9-92ca-f21200cfab24.gif)![crystal10](https://user-images.githubusercontent.com/44692872/51081050-4471b780-16ac-11e9-82dd-b4f2edf07bce.gif)
+![crystalCollector](https://user-images.githubusercontent.com/44692872/59404561-99554f00-8d6c-11e9-973f-07aa79094c44.png)
 
 ## Good Luck!
 
