@@ -1,5 +1,11 @@
 # unit-4-game
-This app HTML is dynamically updated with the popular jQuery library
+This app HTML is dynamically updated with the popular jQuery library. 
+
+## GOAL
+The goal is to match the random number by clicking on the crystals based on their random-hidden values.
+
+## TECHNOLOGIES
+* jQuery
 
 ## This game is a little challenging, but it is so much fun!
 ## Let's execise our math and memory skills!
