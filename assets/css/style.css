@@ -1,7 +1,12 @@
 .title {
-    color: teal;
+    color: rgb(60, 216, 216);
     font-size: 50px;
-
+    text-shadow:
+        -2px -2px 0 #ba3994,
+        2px -2px 0 #ba3994,
+        -2px 2px 0 #ba3994,
+        2px 2px 0 #ba3994;
+        opacity: 0.8;
 }
 
 img {
@@ -10,7 +15,25 @@ img {
 }
 
 button {
-    opacity: 0.6;
+    background-color: transparent !important;
+    opacity: 0.8;
+    /* background-image: url("../images/stars.gif"); */
+    color: rgb(224, 76, 175) !important;
+    text-shadow:
+    -2px -2px 0 blue,
+    2px -2px 0 blue,
+    -2px 2px 0 blue,
+    2px 2px 0 blue;
+    
+}
+ 
+button:hover {
+    text-shadow:
+        -2px -2px 0 blue,
+        2px -2px 0 blue,
+        -2px 2px 0 blue,
+        2px 2px 0 blue;
+    color: red !important;
 }
 
 strong {

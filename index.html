@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>jQuery Assignment</title>
+    <title>Crystal Collector</title>
 
     <!-- Link to css files -->
-    <link rel='stylesheet' text='text/css' href='assets/css/reset.css'>
-    <link rel='stylesheet' text='text/css' href='assets/css/style.css'>
+    <link rel="stylesheet" text="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" text="text/css" href="assets/css/style.css">
 
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -22,36 +22,34 @@
 </head>
 <body>
 
-<div class='container'>
+<div class="container">
     <div class="row justify-content-center">
-        <div class='row'>
-            <div class='col-md-12' style='background: purple'>
-                <h1 class='title'>Crystals Collector</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="title">Crystals Collector</h1>
             </div>
         </div>
     </div>
 </div>
 <br>
 
-
 <!--test: large modal-->
 <!-- Large modal -->
-<div class='container'>
+<div class="container">
     <div class="row justify-content-center">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><strong>Instructions</strong></button>
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class='container'>
+                    <div class="container">
                         <!--jumbotron inside a large modal-->
                         <div class="jumbotron">
                             <h1 class="display-4">Instructions:</h1>
-                            <p class="lead">🔹 I will choose a number between <mark>19 and 120,</mark> and I will display it for you.</p>
-                            <p class="lead">🔹 Then, your job is to match my number by clicking on the crystals as many times as needed.</p>
-                            <p class="lead">🔹 Note that I will keep the value of each crystal hidden until you click on them.</p>
-                            <p class='lead'>🔹 The hidden value of each crystal has a value between <mark>1 and 12</mark></p>
-                            <p class="lead">🔹 Do the math as you click on the crystals.</p>
-                            <p class="lead">🔹 If your total score is the same as my number, you win!</p>
+                            <p class="lead">🔹 A number between <mark>19 and 120,</mark> is randomly generated.</p>
+                            <p class="lead">🔹 Simultaneously, crystals are randomly assigned values between <mark>1 to 12,</mark> and this values are kept hidden.</p>
+                            <p class="lead">🔹 As you click on a crystal, its hidden value will be added to your current value.</p>
+                            <p class="lead">🔹 Now, your job is to match the random number by clicking on the crystals as needed.</p>
+                            <p class="lead">🔹 If your total score is the same as the random number, you win!</p>
                             <p class="lead"><strong>Let your memory skills shine as bright as these crystals. Good luck!</strong></p>
                             <hr class="my-4">
                             <p>Watch Demo Video</p>
@@ -66,23 +64,23 @@
 <br>
 
 
-<div class='container'>
+<div class="container">
     <div class="row justify-content-center">
-        <div class='col-4 text-center' id='scoreDiv' >
+        <div class="col-4 text-center" id="scoreDiv" >
         <!--<div class="d-flex justify-content-center">-->
             <!-- Display a random number between 19 & 120 -->
             <p>Random Number: </p>
-            <div id='randomNumber'></div>
+            <div id="randomNumber"></div>
         </div>
     </div>
 </div>
 <br>
-<div class='container'>
+<div class="container">
     <div class="row justify-content-center">
-        <div class='col-4 text-center' id='scoreDiv2' >
+        <div class="col-4 text-center" id="scoreDiv2" >
             <!-- Display a random number between 19 & 120 -->
             <p>Your total score is:</p>
-            <div id='totalScore'></div>
+            <div id="totalScore"></div>
         </div>
     </div>
 </div>
@@ -90,23 +88,23 @@
 
 
 <!-- add div container to center our crystals -->
-<div class='container'></div>
-    <div class='crystalsDiv'>
+<div class="container"></div>
+    <div class="crystalsDiv">
     <!------------empty div to insert crystals with jQuery ---------------->
     </div>
 </div>
 <br>
 
-<div class='container'>
+<div class="container">
     <div class="row justify-content-md-center">
-            <div class="col-sm-9 text-center" id='scoreTitle'>
+            <div class="col-sm-9 text-center" id="scoreTitle">
             Score
             <div class="row">
-                <div class="col-8 col-sm-6 text-center" id='scoreWins'>
-                    <p>Wins: <strong class='wins'>0</strong>
+                <div class="col-8 col-sm-6 text-center" id="scoreWins">
+                    <p>Wins: <strong class="wins">0</strong>
                 </div>
-                <div class="col-4 col-sm-6 text-center" id='scoreLosses'>
-                    <p>Losses: <strong class='losses'>0</strong>
+                <div class="col-4 col-sm-6 text-center" id="scoreLosses">
+                    <p>Losses: <strong class="losses">0</strong>
                 </div>
             </div>
             </div>
@@ -118,10 +116,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <!-- CDN Link to jQuery website: this method saves the jQuery file in the browser's memory -->
+    <!-- CDN Link to jQuery website: this method saves the jQuery file in the browser"s memory -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- Link to js file -->
-    <script src='assets/javascript/game.js'></script>
+    <script src="assets/javascript/game.js"></script>
 
 </body>
 </html>
