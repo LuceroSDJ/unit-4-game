@@ -8,7 +8,23 @@ var hiddenValues = [];
 //create array to store crystal images
 var images = ["assets/images/crystal1.gif","assets/images/crystal5.gif","assets/images/crystal10.gif", "assets/images/crystal20.gif"];
 
-//Initialize crystal variables with a random number between 1 and 12
+//create a function to generate a random integer between 19 & 120 & store it in a variable
+var random19to120 = function() {
+    //assign random number between 19-120 [BOTH INCLUDED] to variable random
+    //syntax:  Math.floor(Math.random() * (max - min + 1) ) + min;
+    random = Math.floor(Math.random() * (102)) + 19;
+}
+
+//As the page loads, generate the crystals and render the random number on the page
+$(window).on("load", function() {
+    //call functions
+    generateCrystals();
+    random19to120();
+    console.log("Random Number: " + random);
+    $("#randomNumber").text(random);  
+});
+
+//loop through the images array & push a random number between 1 and 12 into hiddenValues array
 function createHiddenValues() {
     for(let i = 0; i < images.length; i++) {
         //push hiden value at the end of the array inside hidenValues array
@@ -17,20 +33,11 @@ function createHiddenValues() {
     }
 }
 
-//As the page loads, create a random number between 19 and 120 and display it on the page
-$(window).on("load", function() {
-    generateCrystals();
-    //random number between 19-120 [BOTH INCLUDED]
-    //syntax:  Math.floor(Math.random() * (max - min + 1) ) + min;
-    random = Math.floor(Math.random() * (102)) + 19;
-    console.log("Random Number: " + random);
-    $("#randomNumber").text(random);  
-});
-
 //Generate crystals with hidden values on the fly and add them to the DOM
 function generateCrystals() {
     createHiddenValues();
-    //add crystal images to empty div
+    //append crystal images to empty div
+    //loop through hiddenValues array, add hidden value as an attribute value & render the crystal on the page
     for(let i = 0; i < hiddenValues.length; i++) {
         var crystal = $("<img>");
         crystal.addClass("crystalImg");
@@ -42,10 +49,8 @@ function generateCrystals() {
         /*since my crystal images are created on the fly, I decided to target the <img> 
         by calling my "var crystal" on line 26 and created my EVENT CLICK FUNCTION.
         When I start playing the game everything seems to be working fine, however, when I either win or lose,
-        the game re-starts and MY CRYSTALS ARE GENERATED AGAIN.
+        the game re-starts and MY CRYSTALS ARE RENDERED AGAIN.
         As a result, I end up with more than 4 crystals in my second game */
-        /* Solution: my for loop iterates through hiddenValues array which generates x number of crystals 
-        based on how many images I stored in my images array */
         crystal.click(function() {
             onImageClick($(this));
         });
@@ -57,22 +62,23 @@ function generateCrystals() {
 function reset() {
     //clear
     hiddenValues = [];
-    $(".crystalsDiv").empty(); //this will get rid of the bug commented in lines 36-40. It will empty crystalsDiv and prevent the images from multiplying everytime the game re-starts
+    $(".crystalsDiv").empty(); //this will get rid of the bug commented in lines 49 - 53. It will empty crystalsDiv and prevent the images from multiplying everytime the game re-starts
     //generate new randomly selected hidden values
     generateCrystals();
     //Different random number
-    random = Math.floor(Math.random() * (102)) + 19; 
-    $("#randomNumber").text(random);
+    random19to120();
     console.log(random);
     sumTotal = 0; 
     $("#totalScore").text(sumTotal); 
 }
 
 function onImageClick(image){
+    //grab the property value of the image "value"
     var value = image.val(); //value of clicked image
     console.log(value);
-    //add value to previous sumTotal
-    sumTotal = sumTotal + value;
+    //add value to current sumTotal
+    // sumTotal = sumTotal + value;
+    sumTotal += value;
     $("#totalScore").text(sumTotal);
     //conditions if else statement
     if(random === sumTotal) {
@@ -90,7 +96,7 @@ function onImageClick(image){
             alert("You win!");
             reset();
             }, 50);  
-    }else if(random < sumTotal) {
+    }else if(sumTotal > random) {
         losses++;
         $(".losses").text(losses);
         delayedAlert = setTimeout(function() {
