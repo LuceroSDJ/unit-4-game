@@ -13,7 +13,9 @@ var random19to120 = function() {
     //assign random number between 19-120 [BOTH INCLUDED] to variable random
     //syntax:  Math.floor(Math.random() * (max - min + 1) ) + min;
     random = Math.floor(Math.random() * (102)) + 19;
-}
+    //render random number to the page
+    $("#randomNumber").text("Random Number: " + random);  
+};
 
 //As the page loads, generate the crystals and render the random number on the page
 $(window).on("load", function() {
@@ -21,7 +23,6 @@ $(window).on("load", function() {
     generateCrystals();
     random19to120();
     console.log("Random Number: " + random);
-    $("#randomNumber").text(random);  
 });
 
 //loop through the images array & push a random number between 1 and 12 into hiddenValues array
@@ -31,7 +32,7 @@ function createHiddenValues() {
         hiddenValues.push(Math.floor(Math.random() * 12) + 1);
         console.log("crystal hidden values: " + hiddenValues);
     }
-}
+};
 
 //Generate crystals with hidden values on the fly and add them to the DOM
 function generateCrystals() {
@@ -51,26 +52,26 @@ function generateCrystals() {
         When I start playing the game everything seems to be working fine, however, when I either win or lose,
         the game re-starts and MY CRYSTALS ARE RENDERED AGAIN.
         As a result, I end up with more than 4 crystals in my second game */
+        //click event function 
         crystal.click(function() {
             onImageClick($(this));
         });
     }
-}
+};
 
 //reset function
 //use this function later
 function reset() {
     //clear
     hiddenValues = [];
-    $(".crystalsDiv").empty(); //this will get rid of the bug commented in lines 49 - 53. It will empty crystalsDiv and prevent the images from multiplying everytime the game re-starts
-    //generate new randomly selected hidden values
-    generateCrystals();
     //Different random number
     random19to120();
-    console.log(random);
+    $(".crystalsDiv").empty(); //this will get rid of the bug commented in lines 50 - 54. It will empty crystalsDiv and prevent the images from multiplying everytime the game re-starts
+    //generate new randomly selected hidden values
+    generateCrystals();
     sumTotal = 0; 
     $("#totalScore").text(sumTotal); 
-}
+};
 
 function onImageClick(image){
     //grab the property value of the image "value"
@@ -95,16 +96,16 @@ function onImageClick(image){
         delayedAlert = setTimeout(function() {
             alert("You win!");
             reset();
-            }, 50);  
+        }, 50);  
     }else if(sumTotal > random) {
         losses++;
         $(".losses").text(losses);
         delayedAlert = setTimeout(function() {
             alert("Good Luck Next Time!");
             reset();
-            }, 50);
+        }, 50);
     }
-}
+};
 
 //closes $(document).ready(function()
 });
