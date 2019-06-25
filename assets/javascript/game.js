@@ -14,7 +14,8 @@ var random19to120 = function() {
     //syntax:  Math.floor(Math.random() * (max - min + 1) ) + min;
     random = Math.floor(Math.random() * (102)) + 19;
     //render random number to the page
-    $("#randomNumber").text("Random Number: " + random);  
+    $("#randomNumber").text(random);  
+    console.log("Random Number: " + random);
 };
 
 //As the page loads, generate the crystals and render the random number on the page
@@ -22,7 +23,6 @@ $(window).on("load", function() {
     //call functions
     generateCrystals();
     random19to120();
-    console.log("Random Number: " + random);
 });
 
 //loop through the images array & push a random number between 1 and 12 into hiddenValues array
@@ -93,19 +93,23 @@ function onImageClick(image){
         This fucntion prevents my alert box and reset function from being executed right away allowing the user to 
         literally see "random number" and "total score number" matching if user wins.
         Similarly, if the user loses, then she/he can also see that "total score number" is greater than the random number. */
-        delayedAlert = setTimeout(function() {
-            alert("You win!");
-            reset();
-        }, 50);  
+        setTimeout(delayAlertReset, 50);
     }else if(sumTotal > random) {
         losses++;
         $(".losses").text(losses);
-        delayedAlert = setTimeout(function() {
-            alert("Good Luck Next Time!");
-            reset();
-        }, 50);
+        setTimeout(alertReset, 50);
     }
 };
 
+// test code 
+function delayAlertReset() {
+    alert("You win!");
+    reset();
+}
+
+function alertReset() {
+    alert("Good luck next time!");
+    reset();
+}
 //closes $(document).ready(function()
 });
